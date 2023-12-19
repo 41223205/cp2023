@@ -145,6 +145,7 @@ img.add_border {
     <div id="tipue_search_content">w7 << <a href='w7.html'>Previous</a> <a href='w8.html'>Next</a> >> w8<br /><h1>ANSIC</h1>
 <p>https://www.w3resource.com/c-programming-exercises/<span>自選 10 個練習範例</span></p>
 <p>01.編寫一個 C 程序，將指定的日期轉換為年、週和日。<br/>註：忽略閏年。</p>
+<p>程式:</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 int main()
@@ -165,8 +166,35 @@ int main()
 
     return 0;
 }</pre>
-<p>測試數據：<br/>天數：1329<br/>預期輸出：<br/>年：3<br/>週：33<br/>天：3</p>
-<p><img alt="" height="98" src="./../images/day.c.png" width="297"/></p><br />w7 << <a href='w7.html'>Previous</a> <a href='w8.html'>Next</a> >> w8</div>
+<p>測試資料：<br/>天數：1329<br/>預期輸出：<br/>年：3<br/>週：33<br/>天：3</p>
+<p><img alt="" height="98" src="./../images/day.c.png" width="297"/></p>
+<p>02.寫一個 C 程序，接受使用者提供的兩個整數併計算這兩個整數的乘積。</p>
+<p>程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">c
+Copy code
+#include &lt;stdio.h&gt;
+
+int main() 
+{
+    int x, y, result; // 宣告兩個整數和它們的乘積的變數
+
+    // 提示用戶輸入，並將輸入的值存儲在 'x' 中
+    printf("\n輸入第一個整數："); 
+    scanf("%d", &amp;x);
+
+    // 提示用戶輸入，並將輸入的值存儲在 'y' 中
+    printf("\n輸入第二個整數：");
+    scanf("%d", &amp;y);
+
+    result = x * y; // 計算 'x' 和 'y' 的乘積
+
+    // 輸出乘積的結果
+    printf("上述兩個整數的乘積 = %d\n", result);
+
+    return 0; // 表示程式執行成功的返回值
+}</pre>
+<p>測試資料：<br/>輸入第一個整數：58<br/>輸入第二個整數：69<br/>預期輸出：<br/>以上兩個整數的乘積 = 4002</p>
+<p><img alt="" height="141" src="./../images/multiply.c.png" width="411"/></p><br />w7 << <a href='w7.html'>Previous</a> <a href='w8.html'>Next</a> >> w8</div>
         
     <!-- footer -->
       <div class="container">

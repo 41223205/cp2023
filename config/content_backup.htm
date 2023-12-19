@@ -526,7 +526,55 @@ void draw_uk_flag(gdImagePtr img) {
 <p>cc gd_uk_flag.c -lgd -lm</p>
 <p>./a.out</p>
 <p><img alt="" height="150" src="/images/uk_flag.png" width="300"/></p>
-<h1>ANSIC</h1><h1>w8</h1>
+<h1>ANSIC</h1>
+<p>https://www.w3resource.com/c-programming-exercises/<span>自選 10 個練習範例</span></p>
+<p>01.編寫一個 C 程序，將指定的日期轉換為年、週和日。<br/>註：忽略閏年。</p>
+<p>程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int days, years, weeks;
+
+    days = 1329; // 總天數
+
+    // 將天數轉換為年、週和天
+    years = days / 365; // 計算年
+    weeks = (days % 365) / 7; // 計算週
+    days = days - ((years * 365) + (weeks * 7)); // 計算剩餘的天數
+
+    // 輸出結果
+    printf("Years: %d\n", years); // 年
+    printf("Weeks: %d\n", weeks); // 週
+    printf("Days: %d \n", days);  // 天
+
+    return 0;
+}</pre>
+<p>測試資料：<br/>天數：1329<br/>預期輸出：<br/>年：3<br/>週：33<br/>天：3</p>
+<p><img alt="" height="98" src="/images/day.c.png" width="297"/></p>
+<p>02.寫一個 C 程序，接受使用者提供的兩個整數併計算這兩個整數的乘積。</p>
+<p>程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() 
+{
+    int x, y, result; // Declare variables for two integers and their product
+
+    // Prompt user for input and store in 'x'
+    printf("\nInput the first integer: "); 
+    scanf("%d", &amp;x);
+
+    // Prompt user for input and store in 'y'
+    printf("\nInput the second integer: ");
+    scanf("%d", &amp;y);
+
+    result = x * y; // Calculate the product of 'x' and 'y'
+
+    // Print the product
+    printf("Product of the above two integers = %d\n", result);
+}</pre>
+<p>測試資料：<br/>輸入第一個整數：58<br/>輸入第二個整數：69<br/>預期輸出：<br/>以上兩個整數的乘積 = 4002</p>
+<p><img alt="" height="141" src="/images/multiply.c.png" width="411"/></p><h1>w8</h1>
 <h1>w9</h1>
 <h1>w10</h1>
 <h1>w11</h1>
