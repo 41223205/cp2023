@@ -217,7 +217,8 @@ int main() {
     return(0);   // 返回0以表示程式執行成功。
 }
 </pre>
-<p>測試資料:<br/>輸入球體的半徑：2.56<br/>球體的體積為 70.276237。</p>
+<p>測試資料:<br/>輸入球體的半徑：2.56</p>
+<p>預計輸出:<br/>球體的體積為 70.276237。</p>
 <p><img alt="" height="85" src="./../images/volume.c.png" width="381"/></p>
 <p>04.用 C 語言編寫一個程序，讀取名字、姓氏和出生年份，並依序顯示姓名和年份。</p>
 <p>程式:</p>
@@ -243,7 +244,164 @@ int main() {
 </pre>
 <p>測試資料:</p>
 <p>輸入您的名字：Chen<br/>輸入您的姓氏：Anjin<br/>輸入您的出生年份：2004<br/>Chen Anjin 2004</p>
-<p><img alt="" height="121" src="./../images/name.c.png" width="315"/></p><br />w7 << <a href='w7.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
+<p><img alt="" height="121" src="./../images/name.c.png" width="315"/></p>
+<p>05.如果給定兩個角，請寫一個 C 程式來求三角形的第三個角。</p>
+<p>程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()  
+{  
+    int ang1, ang2, ang3; /* 分別是三角形的三個角度 */
+  
+    /* 從使用者讀取兩個三角形的角度，以逗號分隔 */  
+    printf("輸入兩個三角形的角度，用逗號分隔：");  
+    scanf("%d, %d", &amp;ang1, &amp;ang2);  
+  
+    ang3 = 180 - (ang1 + ang2);  /* 計算第三個角度 */
+  
+    printf("三角形的第三個角度：%d\n", ang3);  
+  
+    return 0;  
+}  
+</pre>
+<p>測試資料：<br/>輸入以逗號分隔的三角形的兩個角：50,70<br/>三角形的第三個角：60</p>
+<p><img alt="" height="78" src="./../images/triangle_1.c.png" width="571"/></p>
+<p>06.寫一個C 程式來檢查給定的數字是偶數還是奇數</p>
+<p>程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;   // 包含標準輸入/輸出標頭檔。
+
+void main()
+{
+    int num1, rem1;   // 宣告兩個整數變數 'num1' 和 'rem1'。
+
+    printf("輸入一個整數：");   // 提示使用者輸入一個整數。
+    scanf("%d", &amp;num1);   // 讀取並將使用者的輸入存儲在 'num1' 中。
+    rem1 = num1 % 2;   // 計算 'num1' 除以 2 的餘數。
+    if (rem1 == 0)   // 檢查餘數是否等於 0。
+        printf("%d 是偶數\n", num1);   // 輸出一條消息，指示 'num1' 是偶數。
+    else
+        printf("%d 是奇數\n", num1);    // 輸出一條消息，指示 'num1' 是奇數。
+}
+</pre>
+<p>測試資料：15<br/>15 是奇數</p>
+<p><img alt="" height="98" src="./../images/number.c.png" width="317"/></p>
+<p>07.寫一個 C 程式來找出給定年份是否為閏年。</p>
+<p>程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;   // 包含標準輸入/輸出標頭檔。
+
+void main()
+{
+    int chk_year;   // 宣告一個整數變數 'chk_year'。
+
+    printf("輸入一個年份：");   // 提示使用者輸入一個年份。
+    scanf("%d", &amp;chk_year);   // 讀取並將使用者的輸入存儲在 'chk_year' 中。
+    if ((chk_year % 400) == 0)   // 檢查 'chk_year' 是否能被400整除且沒有餘數。
+        printf("%d 年是閏年。\n", chk_year);   // 輸出一條消息，指示 'chk_year' 是閏年。
+    else if ((chk_year % 100) == 0)   // 檢查 'chk_year' 是否能被100整除且沒有餘數。
+        printf("%d 年不是閏年。\n", chk_year);   // 輸出一條消息，指示 'chk_year' 不是閏年。
+    else if ((chk_year % 4) == 0)   // 檢查 'chk_year' 是否能被4整除且沒有餘數。
+        printf("%d 年是閏年。\n", chk_year);   // 輸出一條消息，指示 'chk_year' 是閏年。
+    else
+        printf("%d 年不是閏年。\n", chk_year);   // 輸出一條消息，指示 'chk_year' 不是閏年。
+}
+</pre>
+<p>測試資料：2023<br/>2023年不是閏年。</p>
+<p><img alt="" height="80" src="./../images/year.c.png" width="302"/></p>
+<p>08.寫一個 C 程式來找出三個數中最大的一個。</p>
+<p>程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;   // 包含標準輸入/輸出標頭檔。
+
+void main()
+{
+    int num1, num2, num3;   // 宣告三個整數變數 'num1'、'num2' 和 'num3'。
+
+    printf("輸入三個數字的值：");   // 提示使用者輸入三個數字。
+    scanf("%d %d %d", &amp;num1, &amp;num2, &amp;num3);   // 讀取並將使用者的輸入存儲在 'num1'、'num2' 和 'num3' 中。
+
+    printf("第一個數字 = %d，\t第二個數字 = %d，\t第三個數字 = %d\n", num1, num2, num3);   // 輸出 'num1'、'num2' 和 'num3' 的值。
+
+    if (num1 &gt; num2)   // 檢查 'num1' 是否大於 'num2'。
+    {
+        if (num1 &gt; num3)   // 如果 'num1' 也大於 'num3'。
+        {
+            printf("第一個數字是三個數字中最大的。\n");   // 輸出一條消息，指示 'num1' 是最大的。
+        }
+        else
+        {
+            printf("第三個數字是三個數字中最大的。\n");   // 輸出一條消息，指示 'num3' 是最大的。
+        }
+    }
+    else if (num2 &gt; num3)   // 如果 'num1' 不是最大的，檢查 'num2' 是否大於 'num3'。
+        printf("第二個數字是三個數字中最大的。\n");   // 輸出一條消息，指示 'num2' 是最大的。
+    else
+        printf("第三個數字是三個數字中最大的。\n");   // 如果上述條件都不滿足，則 'num3' 必須是最大的。
+}
+</pre>
+<p>測試數據：12 25 52<br/>預期輸出：<br/>第一個數字 = 12，第二個數字 = 25，第三個數字 = 52<br/>第三個數字是三個數字中最大的</p>
+<p><img alt="" height="127" src="./../images/big.c.png" width="562"/></p>
+<p>09.寫一個C 程式來檢查三角形是等邊三角形、等腰三角形還是不等邊三角形。</p>
+<p>程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // 包含標準輸入/輸出標頭檔。
+
+int main()  
+{  
+    int sidea, sideb, sidec; // 宣告變數用於三角形的三邊。
+
+    /* 
+     * 讀取三角形的所有邊長 
+     */  
+    printf("輸入三角形的三個邊長: ");  // 提示使用者輸入。
+    scanf("%d %d %d", &amp;sidea, &amp;sideb, &amp;sidec);  // 讀取並存儲三角形的邊長。
+
+    if(sidea==sideb &amp;&amp; sideb==sidec) // 檢查是否三邊長都相等。  
+    {  
+        printf("這是一個等邊三角形。\n");  // 輸出等邊三角形的訊息。
+    }  
+    else if(sidea==sideb || sidea==sidec || sideb==sidec) // 檢查是否有兩邊長相等。  
+    {  
+        printf("這是一個等腰三角形。\n");  // 輸出等腰三角形的訊息。
+    }  
+    else // 如果沒有邊長相等。  
+    {  
+        printf("這是一個不等邊三角形。\n");  // 輸出不等邊三角形的訊息。
+    }  
+
+    return 0;  
+} 
+</pre>
+<p>測試資料：<br/>50 50 60<br/>預期輸出：<br/>這是一個等腰三角形。</p>
+<p><img alt="" height="102" src="./../images/triangle_2.c.png" width="397"/></p>
+<p>10.寫一個 C 程式來計算交易的損益。</p>
+<p>程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // 包含標準輸入/輸出標頭檔。
+
+void main()  
+{  
+    int cprice, sprice, plamt;  // 宣告變數來存儲成本價格、售價和利潤/損失金額。
+
+    printf("輸入成本價格: ");  // 提示使用者輸入成本價格。
+    scanf("%d", &amp;cprice);  // 讀取並存儲成本價格。
+    printf("輸入售價: ");  // 提示使用者輸入售價。
+    scanf("%d", &amp;sprice);  // 讀取並存儲售價。
+
+    if(sprice &gt; cprice)  // 檢查售價是否大於成本價格。
+    {  
+        plamt = sprice - cprice;  // 計算利潤金額。
+        printf("\n您可以預定您的利潤金額: %d\n", plamt);  // 輸出利潤消息。
+    }  
+    else if(cprice &gt; sprice)  // 檢查成本價格是否大於售價。
+    {  
+        plamt = cprice - sprice;  // 計算損失金額。
+        printf("\n您遭受了損失金額: %d\n", plamt);  // 輸出損失消息。
+    }  
+    else  // 如果既沒有利潤也沒有損失。
+    {  
+        printf("\n您處於無利潤、無損失的狀態。\n");  // 輸出無利潤、無損失的消息。
+    }  
+}  
+</pre>
+<p>測試資料：<br/>500 700<br/>預期輸出：<br/>您可以預訂您的利潤金額： 200 點</p>
+<p><img alt="" height="101" src="./../images/money.c.png" width="387"/></p><br />w7 << <a href='w7.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
         
     <!-- footer -->
       <div class="container">
