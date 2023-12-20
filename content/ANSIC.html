@@ -218,7 +218,32 @@ int main() {
 }
 </pre>
 <p>測試資料:<br/>輸入球體的半徑：2.56<br/>球體的體積為 70.276237。</p>
-<p><img alt="" height="85" src="./../images/volume.c.png" width="381"/></p><br />w7 << <a href='w7.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
+<p><img alt="" height="85" src="./../images/volume.c.png" width="381"/></p>
+<p>04.用 C 語言編寫一個程序，讀取名字、姓氏和出生年份，並依序顯示姓名和年份。</p>
+<p>程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;    // 包含標準輸入/輸出標頭檔。
+
+int main() {
+    char firstname[20], lastname[20];   // 宣告字元陣列，用於存儲名字和姓氏，每個最大長度為20個字元。
+    int bir_year;   // 宣告一個整數變數 'bir_year' 來存儲出生年份。
+
+    printf("輸入您的名字：");   // 提示使用者輸入他們的名字。
+    scanf("%s", firstname);   // 讀取並將使用者的輸入存儲在 'firstname' 中。
+
+    printf("輸入您的姓氏：");   // 提示使用者輸入他們的姓氏。
+    scanf("%s", lastname);   // 讀取並將使用者的輸入存儲在 'lastname' 中。
+
+    printf("輸入您的出生年份：");   // 提示使用者輸入他們的出生年份。
+    scanf("%d", &amp;bir_year);   // 讀取並將使用者的輸入存儲在 'bir_year' 中。
+
+    printf("%s %s %d\n", firstname, lastname, bir_year);   // 輸出名字、姓氏和出生年份。
+
+    return 0;   // 返回0以表示程式執行成功。
+}
+</pre>
+<p>測試資料:</p>
+<p>輸入您的名字：Chen<br/>輸入您的姓氏：Anjin<br/>輸入您的出生年份：2004<br/>Chen Anjin 2004</p>
+<p><img alt="" height="121" src="./../images/name.c.png" width="315"/></p><br />w7 << <a href='w7.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
         
     <!-- footer -->
       <div class="container">
