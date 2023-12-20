@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='w5.html'>w5</a><li><a href='w6.html'>w6</a><li><a href='w7.html'>w7</a><li><a href='ANSIC.html'>ANSIC</a><li><a href='w8.html'>w8</a><li><a href='w9.html'>w9</a><li><a href='w10.html'>w10</a><li><a href='w11.html'>w11</a><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a><li><a href='w14.html'>w14</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='w5.html'>w5</a><li><a href='w6.html'>w6</a><li><a href='w7.html'>w7</a><li><a href='ANSIC.html'>ANSIC</a><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a><li><a href='w14.html'>w14</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,8 +142,8 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w7 << <a href='w7.html'>Previous</a> <a href='w8.html'>Next</a> >> w8<br /><h1>ANSIC</h1>
-<p>https://www.w3resource.com/c-programming-exercises/<span>自選 10 個練習範例</span></p>
+    <div id="tipue_search_content">w7 << <a href='w7.html'>Previous</a> <a href='w12.html'>Next</a> >> w12<br /><h1>ANSIC</h1>
+<p><a href="https://www.w3resource.com/c-programming-exercises">https://www.w3resource.com/c-programming-exercises</a>/<span>自選 10 個練習範例</span></p>
 <p>01.編寫一個 C 程序，將指定的日期轉換為年、週和日。<br/>註：忽略閏年。</p>
 <p>程式:</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
@@ -194,7 +194,31 @@ int main()
     return 0; // 表示程式執行成功的返回值
 }</pre>
 <p>測試資料：<br/>輸入第一個整數：58<br/>輸入第二個整數：69<br/>預期輸出：<br/>以上兩個整數的乘積 = 4002</p>
-<p><img alt="" height="141" src="./../images/multiply.c.png" width="411"/></p><br />w7 << <a href='w7.html'>Previous</a> <a href='w8.html'>Next</a> >> w8</div>
+<p><img alt="" height="141" src="./../images/multiply.c.png" width="411"/></p>
+<p>03.寫一個計算球體體積的 C 程式。</p>
+<p>程式:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;     // 匯入標準輸入/輸出的標頭檔。
+
+float myradius;          /* 球體的半徑 */
+float myvolume;          /* 球體的體積（待計算） */
+char line_text[50];      /* 從鍵盤輸入的一行文字 */
+
+/* 圓周率π的值到小數點後50位，取自維基百科 */
+const float PI = 3.14159265358979323846264338327950288419716939937510;
+
+int main() {
+    printf("輸入球體的半徑：");  // 提示使用者輸入球體的半徑。
+    fgets(line_text, sizeof(line_text), stdin);  // 從使用者讀取一行輸入，並將其存儲在 'line_text' 中。
+    sscanf(line_text, "%f", &amp;myradius);         // 將 'line_text' 中的輸入轉換為浮點數，並將其存儲在 'myradius' 中。
+
+    myvolume = (4.0 / 3.0) * PI * (myradius * myradius * myradius);  /* 使用公式計算球體的體積。 */
+    printf("球體的體積為 %f。\n", myvolume);  // 輸出計算得到的球體體積。
+
+    return(0);   // 返回0以表示程式執行成功。
+}
+</pre>
+<p>測試資料:<br/>輸入球體的半徑：2.56<br/>球體的體積為 70.276237。</p>
+<p><img alt="" height="85" src="./../images/volume.c.png" width="381"/></p><br />w7 << <a href='w7.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
         
     <!-- footer -->
       <div class="container">
