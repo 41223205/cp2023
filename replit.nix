@@ -1,5 +1,8 @@
-#include <stdio.h>
-int main(void){
-    // Here your code !
-
+{ pkgs }: {
+    deps = [
+      pkgs.libev
+      pkgs.gnuplot
+      pkgs.ncurses.dev
+      pkgs.gd
+    ];
 }
