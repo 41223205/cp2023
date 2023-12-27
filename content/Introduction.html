@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='w5.html'>w5</a><li><a href='w6.html'>w6</a><li><a href='w7.html'>w7</a><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a><li><a href='w14.html'>w14</a><li><a href='ANSIC.html'>ANSIC</a><li class='has-children'><a href='c_ex.html'>c_ex</a><ul class='dropdown'><li><a href='int.html'>int</a><li><a href='jsliu.html'>jsliu</a></li></ul><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='w5.html'>w5</a><li><a href='w6.html'>w6</a><li><a href='w7.html'>w7</a><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a><li><a href='w14.html'>w14</a><li><a href='ANSIC.html'>ANSIC</a><li class='has-children'><a href='c_ex.html'>c_ex</a><ul class='dropdown'><li><a href='Introduction.html'>Introduction</a><li><a href='jsliu.html'>jsliu</a></li></ul><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,7 +142,206 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">c_ex << <a href='c_ex.html'>Previous</a> <a href='jsliu.html'>Next</a> >> jsliu<br /><h1>int</h1><br />c_ex << <a href='c_ex.html'>Previous</a> <a href='jsliu.html'>Next</a> >> jsliu</div>
+    <div id="tipue_search_content">c_ex << <a href='c_ex.html'>Previous</a> <a href='jsliu.html'>Next</a> >> jsliu<br /><h1>Introduction</h1>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/int.mp4" type="video/mp4"/></video></p>
+<p>01.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* Read in two integers , add them and display the answer */
+#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+int main()
+{
+int this_is_a_number1, this_is_a_number2, total;
+printf("Please enter an integer number:\n ");
+scanf("%d", &amp;this_is_a_number1); /* read number in */
+printf("You entered %d\n", this_is_a_number1);
+printf("Please enter another number: \n");
+scanf("%d", &amp;this_is_a_number2); /* read number in */
+printf("You entered %d\n", this_is_a_number2);
+total = this_is_a_number1 + this_is_a_number2;/* add two numbers */
+printf("total is %d\n", total);
+return 0;
+}</pre>
+<p>02.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+/* multiply two floating point numbers */
+int main()
+{
+float this_is_a_number1, this_is_a_number2, total;
+printf("Please enter a number:\n ");
+scanf("%f", &amp;this_is_a_number1); /* read number in */
+printf("You entered %f\n", this_is_a_number1);
+printf("Please enter another number: \n");
+scanf("%f", &amp;this_is_a_number2); /* read number in */
+printf("You entered %f\n", this_is_a_number2);
+total = this_is_a_number1 * this_is_a_number2;/* multiply the numbers */
+printf("product is %f\n", total);
+return 0;
+}</pre>
+<p>03.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* divide two floating point numbers */
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+/* divide two floating point numbers */
+int main()
+{
+float this_is_a_number1, this_is_a_number2, total;
+printf("Please enter a number: \n");
+scanf("%f", &amp;this_is_a_number1); /* read number in */
+printf("You entered %f\n", this_is_a_number1);
+printf("Please enter another number:\n ");
+scanf("%f", &amp;this_is_a_number2); /* read number in */
+printf("You entered %f\n", this_is_a_number2);
+total = this_is_a_number1 / this_is_a_number2;/* divide the numbers */
+printf("quotient is %f\n", total);
+return 0;
+}</pre>
+<p>04.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+/* demonstrate a forloop */
+main()
+{
+float this_is_a_number, total;
+int i;
+total = 0;
+/* forloop goes round 10 times */
+for (i = 0;i &lt; 10;i++)
+{
+printf("Please enter a number:\n ");
+scanf("%f", &amp;this_is_a_number); /* read number in */
+total = total + this_is_a_number;
+}
+printf("Total Sum is = %f\n", total);
+}</pre>
+<p>05.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+/* demonstrate a nested forloop */
+main()
+{
+float this_is_a_number, total;
+int i, j;
+total = 0;
+/* outer forloop goes round 10 times */
+for (i = 0;i &lt; 10;i++)
+{
+/* inner forloop goes round twice */
+for (j = 0;j &lt; 2;j++)
+{
+printf("Please enter a number:\n ");
+scanf("%f", &amp;this_is_a_number); /* read number in */
+total = total + this_is_a_number;
+}
+}
+printf("Total Sum is = %f\n", total);
+}</pre>
+<p>06.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+/* demonstrate a do loop */
+main()
+{
+float this_is_a_number, total;
+int i;
+total = 0;
+i = 0;
+/* do loop goes round until the value of i reaches 10 */
+do {
+printf("Please enter a number:\n ");
+scanf("%f", &amp;this_is_a_number);
+total = total + this_is_a_number;
+i++;
+}while( i &lt; 10);
+printf("Total Sum is = %f\n", total);
+}</pre>
+<p>07.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+/* Example of an if operation */
+int main()
+{
+int this_is_a_number;
+printf( "Please enter an integer between 1 and 10:\n " );
+scanf( "%d", &amp;this_is_a_number );
+if (this_is_a_number &lt;6)
+printf( "This number is less than 6;\n " );
+printf( "Please enter an integer between 10 and 20:\n " );
+scanf( "%d", &amp;this_is_a_number );
+if (this_is_a_number &lt;16)
+printf( "This number is less than 16\n " );
+else
+printf( "This number is greater than 15\n " );
+return 0;
+}</pre>
+<p>08.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+/* Example of an if then else if operation */
+int main()
+{
+int this_is_a_number;
+printf("Please enter an integer between 1 and 10:\n ");
+scanf("%d", &amp;this_is_a_number);
+if (this_is_a_number &lt; 6)
+printf("This number is less than 6;\n ");
+printf("Please enter an integer between 10 and 20:\n ");
+scanf("%d", &amp;this_is_a_number);
+if (this_is_a_number &lt; 16)
+{
+printf("This number is less than 16\n ");
+}
+else if (this_is_a_number == 20)
+{
+printf("This number is 20\n ");
+}
+else
+{
+printf("This number is greater than 15\n ");
+}
+return 0;
+}</pre>
+<p>09.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+/* program to show array use */
+int main()
+{
+int arr1[8];/* define an array of 8 integers */
+int i;
+printf("enter 8 integer numbers\n");
+for (i = 0;i &lt; 8;i++)
+{
+scanf("%d", &amp;arr1[i]);/* read into arr1[i] */
+}
+printf("Your 8 numbers are \n");
+for (i = 0;i &lt; 8;i++)
+{
+printf("%d ", arr1[i]);
+}
+printf("\n");
+}</pre>
+<p>10.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+/* program to show character array use */
+int main()
+{
+char arr2[10];/* define array of 10 characters */
+int i;
+printf("enter 10 characters \n");
+for (i = 0;i &lt; 10;i++)
+{
+scanf("%c", &amp;arr2[i]);
+}
+printf("Your 10 characters are \n");
+for (i = 0;i &lt; 10;i++)
+{
+printf("%c ", arr2[i]);
+}
+printf("\n");
+}</pre>
+<p></p><br />c_ex << <a href='c_ex.html'>Previous</a> <a href='jsliu.html'>Next</a> >> jsliu</div>
         
     <!-- footer -->
       <div class="container">
