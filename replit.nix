@@ -1,8 +1,5 @@
-{ pkgs }: {
-    deps = [
-      pkgs.libev
-      pkgs.gnuplot
-      pkgs.ncurses.dev
-      pkgs.gd
-    ];
+#include <stdio.h>
+int main(void){
+    // Here your code !
+
 }
