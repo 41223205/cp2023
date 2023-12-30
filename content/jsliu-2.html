@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='w5.html'>w5</a><li><a href='w6.html'>w6</a><li><a href='w7.html'>w7</a><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a><li><a href='w15.html'>w15</a><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='練習一.html'>練習一</a><li><a href='Exercises.html'>Exercises</a></li></ul><li class='has-children'><a href='c_ex.html'>c_ex</a><ul class='dropdown'><li class='has-children'><a href='練習二.html'>練習二</a><ul class='dropdown'><li><a href='Introduction.html'>Introduction</a><li><a href='jsliu.html'>jsliu</a></li></li></ul></ul><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='w5.html'>w5</a><li><a href='w6.html'>w6</a><li><a href='w7.html'>w7</a><li><a href='w12.html'>w12</a><li><a href='w13.html'>w13</a><li><a href='w15.html'>w15</a><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='練習一.html'>練習一</a><li><a href='Exercises-1.html'>Exercises-1</a></li></ul><li class='has-children'><a href='c_ex.html'>c_ex</a><ul class='dropdown'><li class='has-children'><a href='Exercises-2.html'>Exercises-2</a><ul class='dropdown'><li><a href='Introduction-1.html'>Introduction-1</a><li><a href='jsliu-1.html'>jsliu-1</a></li></ul><li class='has-children'><a href='練習二.html'>練習二</a><ul class='dropdown'><li><a href='Introduction-2.html'>Introduction-2</a><li><a href='jsliu-2.html'>jsliu-2</a></li></li></ul></ul><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,207 +142,156 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">練習二 << <a href='練習二.html'>Previous</a> <a href='jsliu.html'>Next</a> >> jsliu<br /><h1>Introduction</h1>
+    <div id="tipue_search_content">Introduction-2 << <a href='Introduction-2.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>jsliu-2</h1>
 <p><video controls="controls" height="630" width="1008">
-<source src="./../images/int.mp4" type="video/mp4"/></video></p>
+<source src="./../images/jsliu.mp4" type="video/mp4"/></video></p>
+<p><video controls="controls" height="630" width="1008">
+<source src="./../images/c1.mp4" type="video/mp4"/></video></p>
 <p>01.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* Read in two integers , add them and display the answer */
-#define _CRT_SECURE_NO_WARNINGS
-#include&lt;stdio.h&gt;
-int main()
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+Say Hello World!.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
 {
-int this_is_a_number1, this_is_a_number2, total;
-printf("Please enter an integer number:\n ");
-scanf("%d", &amp;this_is_a_number1); /* read number in */
-printf("You entered %d\n", this_is_a_number1);
-printf("Please enter another number: \n");
-scanf("%d", &amp;this_is_a_number2); /* read number in */
-printf("You entered %d\n", this_is_a_number2);
-total = this_is_a_number1 + this_is_a_number2;/* add two numbers */
-printf("total is %d\n", total);
-return 0;
+/* 印出 Hello */
+printf("Hello World!");
 }</pre>
 <p>02.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+Say Hello World! Bye Bye.
+==================== */
 #include &lt;stdio.h&gt;
-/* multiply two floating point numbers */
 int main()
 {
-float this_is_a_number1, this_is_a_number2, total;
-printf("Please enter a number:\n ");
-scanf("%f", &amp;this_is_a_number1); /* read number in */
-printf("You entered %f\n", this_is_a_number1);
-printf("Please enter another number: \n");
-scanf("%f", &amp;this_is_a_number2); /* read number in */
-printf("You entered %f\n", this_is_a_number2);
-total = this_is_a_number1 * this_is_a_number2;/* multiply the numbers */
-printf("product is %f\n", total);
+/* 印出 Hello World! Bye Bye */
+printf("Hello World! ");
+printf("Bye ");
+printf("Bye");
 return 0;
 }</pre>
 <p>03.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* divide two floating point numbers */
-#define _CRT_SECURE_NO_WARNINGS
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+變數宣告的例子 3.
+==================== */
 #include &lt;stdio.h&gt;
-/* divide two floating point numbers */
 int main()
 {
-float this_is_a_number1, this_is_a_number2, total;
-printf("Please enter a number: \n");
-scanf("%f", &amp;this_is_a_number1); /* read number in */
-printf("You entered %f\n", this_is_a_number1);
-printf("Please enter another number:\n ");
-scanf("%f", &amp;this_is_a_number2); /* read number in */
-printf("You entered %f\n", this_is_a_number2);
-total = this_is_a_number1 / this_is_a_number2;/* divide the numbers */
-printf("quotient is %f\n", total);
+int a = 1;
+int A = 8;
+int b = 2, c;
+c = A - a + b;
+/* 輸出 a, A, b, c 到螢幕 */
+printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );
 return 0;
 }</pre>
 <p>04.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
-#include&lt;stdio.h&gt;
-/* demonstrate a forloop */
-main()
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
 {
-float this_is_a_number, total;
-int i;
-total = 0;
-/* forloop goes round 10 times */
-for (i = 0;i &lt; 10;i++)
-{
-printf("Please enter a number:\n ");
-scanf("%f", &amp;this_is_a_number); /* read number in */
-total = total + this_is_a_number;
-}
-printf("Total Sum is = %f\n", total);
+float a = 0.5;
+double b = 1.2;
+int c = 3;
+b = b + a + c;
+/* 輸出 a, b, c 到螢幕 */
+printf( " a = %3.1f, b = %3.1f, c = %d ", a ,b, c );
 }</pre>
 <p>05.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
-#include&lt;stdio.h&gt;
-/* demonstrate a nested forloop */
-main()
-{
-float this_is_a_number, total;
-int i, j;
-total = 0;
-/* outer forloop goes round 10 times */
-for (i = 0;i &lt; 10;i++)
-{
-/* inner forloop goes round twice */
-for (j = 0;j &lt; 2;j++)
-{
-printf("Please enter a number:\n ");
-scanf("%f", &amp;this_is_a_number); /* read number in */
-total = total + this_is_a_number;
-}
-}
-printf("Total Sum is = %f\n", total);
-}</pre>
-<p>06.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
-#include&lt;stdio.h&gt;
-/* demonstrate a do loop */
-main()
-{
-float this_is_a_number, total;
-int i;
-total = 0;
-i = 0;
-/* do loop goes round until the value of i reaches 10 */
-do {
-printf("Please enter a number:\n ");
-scanf("%f", &amp;this_is_a_number);
-total = total + this_is_a_number;
-i++;
-}while( i &lt; 10);
-printf("Total Sum is = %f\n", total);
-}</pre>
-<p>07.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-/* Example of an if operation */
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* =========================
+輸入一個整數
+========================= */
+#include &lt;stdio.h&gt;
 int main()
 {
-int this_is_a_number;
-printf( "Please enter an integer between 1 and 10:\n " );
-scanf( "%d", &amp;this_is_a_number );
-if (this_is_a_number &lt;6)
-printf( "This number is less than 6;\n " );
-printf( "Please enter an integer between 10 and 20:\n " );
-scanf( "%d", &amp;this_is_a_number );
-if (this_is_a_number &lt;16)
-printf( "This number is less than 16\n " );
-else
-printf( "This number is greater than 15\n " );
+int i;
+printf("Input an integer:");
+scanf( "%d", &amp;i ); /* ch 前面加個 &amp;(位址運算元) */
+printf( "the number is %d", i );
+return 0;
+}</pre>
+<p>06.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+基本運算範例.
+==================== */
+#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<p>07.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+關係運算元的範例.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int a = 10, b = 5;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+printf( "\n" );
+b = 10;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
 return 0;
 }</pre>
 <p>08.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
-#include &lt;stdio.h&gt;
-/* Example of an if then else if operation */
-int main()
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+位元運算元的範例.
+==================== */
+#include&lt;stdio.h&gt;
+void main()
 {
-int this_is_a_number;
-printf("Please enter an integer between 1 and 10:\n ");
-scanf("%d", &amp;this_is_a_number);
-if (this_is_a_number &lt; 6)
-printf("This number is less than 6;\n ");
-printf("Please enter an integer between 10 and 20:\n ");
-scanf("%d", &amp;this_is_a_number);
-if (this_is_a_number &lt; 16)
-{
-printf("This number is less than 16\n ");
-}
-else if (this_is_a_number == 20)
-{
-printf("This number is 20\n ");
-}
-else
-{
-printf("This number is greater than 15\n ");
-}
-return 0;
+int a,b;
+a = 15;
+b = 1;
+printf("%d \n", a | b ); /* a OR b */
+printf("%d \n", a &amp; b ); /* a AND b */
+printf("%d \n", a ^ b ); /* a XOR b */
+printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
+printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
+printf("%d \n", ~a ); /* A 的補數運算 */
 }</pre>
 <p>09.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
-#include&lt;stdio.h&gt;
-/* program to show array use */
-int main()
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+Logical NOT.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
 {
-int arr1[8];/* define an array of 8 integers */
-int i;
-printf("enter 8 integer numbers\n");
-for (i = 0;i &lt; 8;i++)
-{
-scanf("%d", &amp;arr1[i]);/* read into arr1[i] */
-}
-printf("Your 8 numbers are \n");
-for (i = 0;i &lt; 8;i++)
-{
-printf("%d ", arr1[i]);
-}
-printf("\n");
+int a;
+a = 3;
+printf("%d\n", !a );
+a = 0;
+printf("%d\n", !a );
 }</pre>
 <p>10.</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
-#include&lt;stdio.h&gt;
-/* program to show character array use */
-int main()
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+sizeof 的範例.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
 {
-char arr2[10];/* define array of 10 characters */
-int i;
-printf("enter 10 characters \n");
-for (i = 0;i &lt; 10;i++)
-{
-scanf("%c", &amp;arr2[i]);
-}
-printf("Your 10 characters are \n");
-for (i = 0;i &lt; 10;i++)
-{
-printf("%c ", arr2[i]);
-}
-printf("\n");
+char a;
+printf( " The size of int is %d \n", sizeof(int) );
+printf( " The size of char a is %d \n", sizeof(a) );
 }</pre>
 <p></p>
-<br />練習二 << <a href='練習二.html'>Previous</a> <a href='jsliu.html'>Next</a> >> jsliu</div>
+<br />Introduction-2 << <a href='Introduction-2.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
       <div class="container">

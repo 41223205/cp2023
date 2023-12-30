@@ -889,7 +889,8 @@ if (outputFile == NULL) {
 <p>cd downloads</p>
 <p>cc gd_korea_flag.c -lgd -lm</p>
 <p>./a.out</p>
-<p><img alt="" height="200" src="/images/korea_flag.png" width="300"/></p><h1>w12</h1>
+<p><img alt="" height="200" src="/images/korea_flag.png" width="300"/></p>
+<h1>w12</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -1014,8 +1015,10 @@ int main() {
 <p>cc euler_gnuplot_msd_ex1.c</p>
 <p>./a.out</p>
 <p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p>
-<h1>w15</h1><h1>ANSIC</h1>
-<p><a href="https://www.w3resource.com/c-programming-exercises">https://www.w3resource.com/c-programming-exercises</a><span>/</span><span>自選 10 個練習範例</span></p><h2>練習一</h2>
+<h1>w15</h1>
+<h1>ANSIC</h1>
+<p><a href="https://www.w3resource.com/c-programming-exercises">https://www.w3resource.com/c-programming-exercises</a><span>/</span><span>自選 10 個練習範例</span></p>
+<h2>練習一</h2>
 <p><a href="https://www.w3resource.com/c-programming-exercises">https://www.w3resource.com/c-programming-exercises</a><span>/</span><span>自選 10 個練習範例</span></p>
 <p><span>01.用 C 語言編寫一個程式來列印目前日期和時間</span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;time.h&gt;
@@ -1273,7 +1276,8 @@ int main(void)
 }
 </pre>
 <p><img alt="" height="112" src="/images/c10.c.png" width="318"/></p>
-<p><span></span></p><h2>Exercises</h2>
+<p><span></span></p>
+<h2>Exercises</h2>
 <p><a href="https://www.w3resource.com/c-programming-exercises">https://www.w3resource.com/c-programming-exercises</a>/<span>自選 10 個練習範例</span></p>
 <p>01.編寫一個 C 程序，將指定的日期轉換為年、週和日。<br/>註：忽略閏年。</p>
 <p>程式:</p>
@@ -1532,8 +1536,194 @@ void main()
 }  
 </pre>
 <p>測試資料：<br/>500 700<br/>預期輸出：<br/>您可以預訂您的利潤金額： 200 點</p>
-<p><img alt="" height="101" src="/images/money.c.png" width="387"/></p><h1>c_ex</h1>
-<h2>Introduction</h2>
+<p><img alt="" height="101" src="/images/money.c.png" width="387"/></p>
+<h1>c_ex</h1>
+<h2>Exercises</h2>
+<h3>Introduction</h3>
+<h3>jsliu</h3>
+<p>01.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+switch - case 的範例 1.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+char c;
+printf( "Input a char:" );
+scanf( "%c", &amp;c );
+switch( c )
+{
+case 'a':
+printf(" you pressed a ");
+break;
+case 'b':
+printf(" you pressed b ");
+break;
+case 'c':
+printf(" you pressed c ");
+break;
+default:
+printf(" not a, b, c ");
+break;
+}
+}</pre>
+<p><img alt="" height="208" src="/images/j01.c.png" width="435"/></p>
+<p>02.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+Say Hello World! Bye Bye.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+/* 印出 Hello World! Bye Bye */
+printf("Hello World! ");
+printf("Bye ");
+printf("Bye");
+return 0;
+}</pre>
+<p><img alt="" height="166" src="/images/j02.c.png" width="350"/></p>
+<p>03.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+while 的範例 1.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+i = 0; j = 10; /* 迴圈外先設定初值 */
+while( i &lt; 6 )
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+i++;
+j++;
+}
+}</pre>
+<p><img alt="" height="168" src="/images/j03.c.png" width="307"/></p>
+<p>04.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+do - while.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int i, j;
+i = 0; j = 10; /* 迴圈外先設定初值 */
+do
+{
+printf( "i = %d, ", i );
+printf( "j = %d \n", j );
+i++;
+j++;
+}
+while( i &lt; 6 ); /* 檢查條件的地方 */
+}</pre>
+<p><img alt="" height="165" src="/images/j04.c.png" width="298"/></p>
+<p>05.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+array - 1.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int grade[5]; /* size = 5 的 array */
+int i;
+grade[0] = 75; /* 1st element */
+grade[1] = 80; /* 2nd element */
+grade[2] = 85; /* 3rd element */
+grade[3] = 70; /* 4th element */
+grade[4] = 90; /* 5th element */
+for( i = 0; i &lt; 5; i ++ )
+{
+printf("Number %d = %d\n", i, grade[ i ] );
+}
+return 0;
+}</pre>
+<p><img alt="" height="137" src="/images/j05.c.png" width="293"/></p>
+<p>06.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+變數宣告的例子 3.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int a = 1;
+int A = 8;
+int b = 2, c;
+c = A - a + b;
+/* 輸出 a, A, b, c 到螢幕 */
+printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );
+return 0;
+}</pre>
+<div class="line number1 index0 alt2"><code class="cpp comments"></code></div>
+<p>07.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* =========================
+輸入一個整數
+========================= */
+#include &lt;stdio.h&gt;
+int main()
+{
+int i;
+printf("Input an integer:");
+scanf( "%d", &amp;i ); /* ch 前面加個 &amp;(位址運算元) */
+printf( "the number is %d", i );
+return 0;
+}</pre>
+<p>08.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+Logical NOT.
+==================== */
+#include &lt;stdio.h&gt;
+void main()
+{
+int a;
+a = 3;
+printf("%d\n", !a );
+a = 0;
+printf("%d\n", !a );
+}</pre>
+<p>09.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+基本運算範例.
+==================== */
+#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<p>10.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
+關係運算元的範例.
+==================== */
+#include &lt;stdio.h&gt;
+int main()
+{
+int a = 10, b = 5;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+printf( "\n" );
+b = 10;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+return 0;
+}</pre>
+<p></p><h2>練習二</h2>
+<h3>Introduction</h3>
 <p><video controls="controls" height="630" width="1008">
 <source src="/images/int.mp4" type="video/mp4"/></video></p>
 <p>01.</p>
@@ -1732,7 +1922,8 @@ printf("%c ", arr2[i]);
 }
 printf("\n");
 }</pre>
-<p></p><h2>jsliu</h2>
+<p></p>
+<h3>jsliu</h3>
 <p><video controls="controls" height="630" width="1008">
 <source src="/images/jsliu.mp4" type="video/mp4"/></video></p>
 <p><video controls="controls" height="630" width="1008">
@@ -1880,7 +2071,8 @@ char a;
 printf( " The size of int is %d \n", sizeof(int) );
 printf( " The size of char a is %d \n", sizeof(a) );
 }</pre>
-<p></p><h1>Brython</h1>
+<p></p>
+<h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
