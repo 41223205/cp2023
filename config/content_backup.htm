@@ -1015,7 +1015,7 @@ int main() {
 <p>cc euler_gnuplot_msd_ex1.c</p>
 <p>./a.out</p>
 <p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p>
-<h1>w16</h1>
+<h1>w15</h1><h1>w16</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;math.h&gt;
 
@@ -1601,7 +1601,232 @@ void main()
 <h1>c_ex</h1>
 <h2>Exercises</h2>
 <h3>Introduction</h3>
-<h3>jsliu</h3>
+<p>01.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* 函式用來找出一年級學生中最高分的學生 */
+#include &lt;stdio.h&gt;
+
+double getmarks(double pupils[]);
+
+int main()
+{
+    double pupil;
+    /* 預設在程式主要部分的一年級學生的分數陣列 */
+    double marks[] = {10.6, 23.7, 67.9, 93.0, 64.2, 33.8, 57.5, 82.2, 50.7, 45.7};
+    
+    /* 呼叫 getmarks 函式。該函式將回傳最高分，然後存入 pupil 中 */
+    pupil = getmarks(marks);
+    printf("最高分是 = %f", pupil);
+    
+    return 0;
+}
+
+/* 函式用來找出學生陣列中的最高分 */
+double getmarks(double pupils[])
+{
+    int i;
+    double highest;
+    highest = 0;
+    
+    /* 逐一檢查所有學生的分數，並儲存最高分 */
+    for (i = 0; i &lt; 10; ++i)
+    {
+        if (highest &lt; pupils[i])
+            highest = pupils[i];
+    }
+    
+    return highest; /* 將最高分回傳至呼叫該函式的地方 */
+}
+</pre>
+<p><img alt="" height="72" src="/images/i01.png" width="460"/></p>
+<p>02.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+/* multiply two floating point numbers */
+int main()
+{
+float this_is_a_number1, this_is_a_number2, total;
+printf("Please enter a number:\n ");
+scanf("%f", &amp;this_is_a_number1); /* read number in */
+printf("You entered %f\n", this_is_a_number1);
+printf("Please enter another number: \n");
+scanf("%f", &amp;this_is_a_number2); /* read number in */
+printf("You entered %f\n", this_is_a_number2);
+total = this_is_a_number1 * this_is_a_number2;/* multiply the numbers */
+printf("product is %f\n", total);
+return 0;
+}</pre>
+<p><img alt="" height="157" src="/images/02.png" width="292"/></p>
+<p>03.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+/* demonstrate a forloop */
+main()
+{
+float this_is_a_number, total;
+int i;
+total = 0;
+/* forloop goes round 10 times */
+for (i = 0;i &lt; 10;i++)
+{
+printf("Please enter a number:\n ");
+scanf("%f", &amp;this_is_a_number); /* read number in */
+total = total + this_is_a_number;
+}
+printf("Total Sum is = %f\n", total);
+}</pre>
+<p><img alt="" height="161" src="/images/03.png" width="292"/></p>
+<p>04.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+/* demonstrate a do loop */
+main()
+{
+float this_is_a_number, total;
+int i;
+total = 0;
+i = 0;
+/* do loop goes round until the value of i reaches 10 */
+do {
+printf("Please enter a number:\n ");
+scanf("%f", &amp;this_is_a_number);
+total = total + this_is_a_number;
+i++;
+}while( i &lt; 10);
+printf("Total Sum is = %f\n", total);
+}</pre>
+<p><img alt="" height="27" src="/images/04.png" width="256"/></p>
+<p>05.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+/* Example of an if then else if operation */
+int main()
+{
+int this_is_a_number;
+printf("Please enter an integer between 1 and 10:\n ");
+scanf("%d", &amp;this_is_a_number);
+if (this_is_a_number &lt; 6)
+printf("This number is less than 6;\n ");
+printf("Please enter an integer between 10 and 20:\n ");
+scanf("%d", &amp;this_is_a_number);
+if (this_is_a_number &lt; 16)
+{
+printf("This number is less than 16\n ");
+}
+else if (this_is_a_number == 20)
+{
+printf("This number is 20\n ");
+}
+else
+{
+printf("This number is greater than 15\n ");
+}
+return 0;
+}</pre>
+<p><img alt="" height="23" src="/images/05.png" width="258"/></p>
+<p>06.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+/* program to show character array use */
+int main()
+{
+char arr2[10];/* define array of 10 characters */
+int i;
+printf("enter 10 characters \n");
+for (i = 0;i &lt; 10;i++)
+{
+scanf("%c", &amp;arr2[i]);
+}
+printf("Your 10 characters are \n");
+for (i = 0;i &lt; 10;i++)
+{
+printf("%c ", arr2[i]);
+}
+printf("\n");
+}
+</pre>
+<p><img alt="" height="22" src="/images/06.png" width="258"/></p>
+<p>07.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+/* program to show array use */
+int main()
+{
+int arr1[8];/* define an array of 8 integers */
+int i;
+printf("enter 8 integer numbers\n");
+for (i = 0;i &lt; 8;i++)
+{
+scanf("%d", &amp;arr1[i]);/* read into arr1[i] */
+}
+printf("Your 8 numbers are \n");
+for (i = 0;i &lt; 8;i++)
+{
+printf("%d ", arr1[i]);
+}
+printf("\n");
+}</pre>
+<p><img alt="" height="123" src="/images/07.png" width="432"/></p>
+<p>08.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+/* Example of an if operation */
+int main()
+{
+int this_is_a_number;
+printf( "Please enter an integer between 1 and 10:\n " );
+scanf( "%d", &amp;this_is_a_number );
+if (this_is_a_number &lt;6)
+printf( "This number is less than 6;\n " );
+printf( "Please enter an integer between 10 and 20:\n " );
+scanf( "%d", &amp;this_is_a_number );
+if (this_is_a_number &lt;16)
+printf( "This number is less than 16\n " );
+else
+printf( "This number is greater than 15\n " );
+return 0;
+}</pre>
+<p><img alt="" height="120" src="/images/08.png" width="427"/></p>
+<p>09.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+/* demonstrate a nested forloop */
+main()
+{
+float this_is_a_number, total;
+int i, j;
+total = 0;
+/* outer forloop goes round 10 times */
+for (i = 0;i &lt; 10;i++)
+{
+/* inner forloop goes round twice */
+for (j = 0;j &lt; 2;j++)
+{
+printf("Please enter a number:\n ");
+scanf("%f", &amp;this_is_a_number); /* read number in */
+total = total + this_is_a_number;
+}
+}
+printf("Total Sum is = %f\n", total);
+}</pre>
+<p><img alt="" height="242" src="/images/09.png" width="287"/></p>
+<p>10.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* divide two floating point numbers */
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+/* divide two floating point numbers */
+int main()
+{
+float this_is_a_number1, this_is_a_number2, total;
+printf("Please enter a number: \n");
+scanf("%f", &amp;this_is_a_number1); /* read number in */
+printf("You entered %f\n", this_is_a_number1);
+printf("Please enter another number:\n ");
+scanf("%f", &amp;this_is_a_number2); /* read number in */
+printf("You entered %f\n", this_is_a_number2);
+total = this_is_a_number1 / this_is_a_number2;/* divide the numbers */
+printf("quotient is %f\n", total);
+return 0;
+}</pre>
+<p><img alt="" height="265" src="/images/010.png" width="287"/></p><h3>jsliu</h3>
 <p>01.</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* ====================
 switch - case 的範例 1.
