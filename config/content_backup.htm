@@ -1015,7 +1015,265 @@ int main() {
 <p>./a.out</p>
 <p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p>
 <h1>w15</h1><h1>ANSIC</h1>
-<h2>練習一</h2><h2>Exercises</h2>
+<p><a href="https://www.w3resource.com/c-programming-exercises">https://www.w3resource.com/c-programming-exercises</a><span>/</span><span>自選 10 個練習範例</span></p><h2>練習一</h2>
+<p><a href="https://www.w3resource.com/c-programming-exercises">https://www.w3resource.com/c-programming-exercises</a><span>/</span><span>自選 10 個練習範例</span></p>
+<p><span>01.用 C 語言編寫一個程式來列印目前日期和時間</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;time.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(void)
+{
+    time_t cur_time;   // 宣告 time_t 型別的變數 cur_time 用來存放時間戳
+    char* cur_t_string; // 宣告指標 cur_t_string 用來存放時間轉換後的字串
+    cur_time = time(NULL); // 使用 time 函式獲取當前的時間戳
+    if (cur_time == ((time_t)-1))
+    {
+        (void) fprintf(stderr, "Failure to get the current date and time.\n"); // 如果獲取時間戳失敗，輸出錯誤訊息
+        exit(EXIT_FAILURE);
+    }
+    cur_t_string = ctime(&amp;cur_time); // 將時間戳轉換成字串形式，並存入 cur_t_string
+    if (cur_t_string == NULL)
+    {
+        (void) fprintf(stderr, "Failure to convert the current date and time.\n"); // 如果轉換時間字串失敗，輸出錯誤訊息
+        exit(EXIT_FAILURE);
+    }
+    (void) printf("\n The Current time is : %s \n", cur_t_string); // 輸出格式化後的時間字串
+    exit(EXIT_SUCCESS);
+}
+</pre>
+<p></p>
+<p><span><img alt="" height="152" src="/images/c01.c.png" width="562"/></span></p>
+<p><span>02.用 C 語言寫一個程式來計算自月初以來經過的秒數。</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+ 
+int main(void)
+{
+    time_t now; // 宣告 time_t 型別的變數 now 用來存放時間戳
+    time(&amp;now); // 使用 time 函式獲取當前的時間戳
+ 
+    struct tm beg_month; // 宣告 struct tm 型別的變數 beg_month 用來存放月初的日期和時間
+    beg_month = *localtime(&amp;now); // 使用 localtime 函式將時間戳轉換為本地時間結構體
+    beg_month.tm_hour = 0; // 將小時部分設定為 0
+    beg_month.tm_min = 0;  // 將分鐘部分設定為 0
+    beg_month.tm_sec = 0;  // 將秒數部分設定為 0
+    beg_month.tm_mday = 1; // 將月份的日數部分設定為 1，表示月初
+ 
+    double seconds = difftime(now, mktime(&amp;beg_month)); // 計算當前時間與月初的時間差（秒數）
+    printf("\n %.f seconds passed since the beginning of the month.\n\n", seconds); // 輸出經過的秒數
+    return 0;
+}
+</pre>
+<p><span><img alt="" height="96" src="/images/c02.c.png" width="586"/></span></p>
+<p><span>03.用 C 寫一個程序，將 time_t 物件轉換為文字表示形式。<br/><br/></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define __STDC_WANT_LIB_EXT1__ 1
+#include &lt;time.h&gt;
+#include &lt;stdio.h&gt; 
+
+int main(void)
+{
+    time_t result = time(NULL); // 獲取當前的時間戳
+    printf("\n%s\n", ctime(&amp;result)); // 使用 ctime 函式將時間戳轉換為字串並輸出
+    
+#ifdef __STDC_LIB_EXT1__
+    char time_str[26]; // 宣告 char 陣列 time_str 用來存放時間字串
+    ctime_s(time_str, sizeof time_str, &amp;result); // 使用 ctime_s 函式將時間戳轉換為字串並存入 time_str
+    printf("\n%s\n", time_str); // 輸出格式化後的時間字串
+#endif
+}
+</pre>
+<p><span><img alt="" height="87" src="/images/c03.c.png" width="298"/></span></p>
+<p><span>04.用 C 編寫一個程序，將 tm 物件轉換為自訂文字表示形式。<br/></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; 
+#include &lt;time.h&gt;
+#include &lt;locale.h&gt;
+ 
+int main(void)
+{
+    char time_buff[70]; // 宣告 char 陣列 time_buff 用來存放時間字串
+    struct tm mytime = {
+        .tm_year = 116,  // 年份為 2016，需減 1900
+        .tm_mon = 8,     // 月份為 9th month，需減 1
+        .tm_mday = 2,    // 日數為 2nd day
+        .tm_hour = 16,   // 時間為 16 小時
+        .tm_min = 30,    // 分鐘為 30 分鐘
+        .tm_sec = 32     // 秒數為 32 秒
+    };
+
+    printf("\n The textual representation of specified date and time :\n"); 
+    if (strftime(time_buff, sizeof time_buff, "%B %c %P", &amp;mytime)) 
+    {
+        puts(time_buff); // 輸出格式化後的時間字串
+    } 
+    else 
+    {
+        puts("strftime failed"); // 如果 strftime 函式失敗，輸出錯誤訊息
+    }
+
+    setlocale(LC_TIME, "el_GR.utf8"); // 設定本地化環境為希臘語
+
+    if (strftime(time_buff, sizeof time_buff, "%B %c %P", &amp;mytime)) 
+    {
+        puts(time_buff); // 輸出在希臘語環境下格式化後的時間字串
+    } 
+    else 
+    {
+        puts("strftime failed"); // 如果 strftime 函式失敗，輸出錯誤訊息
+    }
+
+    printf("\n");     
+}
+</pre>
+<p><span><img alt="" height="138" src="/images/c04.c.png" width="592"/></span></p>
+<p><span>05.用 C 編寫一個程序，將 tm 物件轉換為自訂寬字串文字表示形式。<br/></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+#include &lt;wchar.h&gt;
+#include &lt;locale.h&gt;
+ 
+int main(void)
+{
+    wchar_t buff[40]; // 宣告 wchar_t 陣列 buff 用來存放寬字元時間字串
+    struct tm mytime = {
+        .tm_year = 116,  // 年份為 2016，需減 1900
+        .tm_mon = 8,     // 月份為 9th month，需減 1
+        .tm_mday = 2,    // 日數為 2nd day
+        .tm_hour = 17,   // 時間為 17 小時
+        .tm_min = 51,    // 分鐘為 51 分鐘
+        .tm_sec = 10     // 秒數為 10 秒
+    };
+
+    printf("\n The textual representation of specified date and time :\n"); 
+    if (wcsftime(buff, sizeof buff, L"%A %c", &amp;mytime)) 
+    {
+        printf("\n%ls\n", buff); // 輸出格式化後的寬字元時間字串
+    } 
+    else 
+    {
+        puts("wcsftime failed"); // 如果 wcsftime 函式失敗，輸出錯誤訊息
+    }
+
+    setlocale(LC_ALL, "en_US.UTF-8"); // 設定本地化環境為英文（美國）
+
+    if (wcsftime(buff, sizeof buff, L"%A %c", &amp;mytime)) 
+    {
+        printf("%ls\n\n", buff); // 輸出在英文（美國）環境下格式化後的寬字元時間字串
+    } 
+    else 
+    {
+        puts("wcsftime failed"); // 如果 wcsftime 函式失敗，輸出錯誤訊息
+    }
+}
+</pre>
+<p><span><img alt="" height="146" src="/images/c05.c.png" width="592"/></span></p>
+<p><span>06.用 C 語言編寫一個程序，將 time_t 物件轉換為以協調世界時表示的日曆時間。<br/></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define __STDC_WANT_LIB_EXT1__ 1
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+int main(void)
+{
+    time_t t = time(NULL); // 取得目前的時間
+    printf("\nThe calendar time expressed as Coordinated Universal Time is :");
+    
+    // 使用 gmtime 函式轉換成 UTC（協調世界時）時間，再用 asctime 函式轉換成文字表示形式
+    printf("\nUTC:   %s", asctime(gmtime(&amp;t)));
+    
+    // 使用 localtime 函式轉換成本地時間，再用 asctime 函式轉換成文字表示形式
+    printf("local: %s\n", asctime(localtime(&amp;t)));
+ 
+#ifdef __STDC_LIB_EXT1__
+    struct tm buf;
+    char str[26];
+
+    // 使用 gmtime_s 函式轉換成 UTC（協調世界時）時間，再用 asctime_s 函式轉換成文字表示形式
+    asctime_s(str, sizeof str, gmtime_s(&amp;t, &amp;buf));
+    printf("UTC:   %s", str);
+
+    // 使用 localtime_s 函式轉換成本地時間，再用 asctime_s 函式轉換成文字表示形式
+    asctime_s(str, sizeof str, localtime_s(&amp;t, &amp;buf));
+    printf("local: %s", str);
+#endif
+}
+</pre>
+<p><span><img alt="" height="132" src="/images/c06.c.png" width="658"/></span></p>
+<p><span>07.用 C 寫一個程序，將 time_t 物件轉換為表示為本地時間的日曆時間。<br/></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define __STDC_WANT_LIB_EXT1__ 1
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+
+int main(void)
+{
+    time_t t = time(NULL);
+    printf("\nThe calendar time expressed as a local Time is :");
+    
+    // 使用 gmtime 函式轉換成 UTC（協調世界時）時間，再用 asctime 函式轉換成文字表示形式
+    printf("\nUTC:   %s", asctime(gmtime(&amp;t)));
+    
+    // 使用 localtime 函式轉換成本地時間，再用 asctime 函式轉換成文字表示形式
+    printf("local: %s\n", asctime(localtime(&amp;t)));
+ 
+#ifdef __STDC_LIB_EXT1__
+    struct tm buf;
+    char str[26];
+
+    // 使用 gmtime_s 函式轉換成 UTC（協調世界時）時間，再用 asctime_s 函式轉換成文字表示形式
+    asctime_s(str, sizeof str, gmtime_s(&amp;t, &amp;buf));
+    printf("UTC:   %s", str);
+
+    // 使用 localtime_s 函式轉換成本地時間，再用 asctime_s 函式轉換成文字表示形式
+    asctime_s(str, sizeof str, localtime_s(&amp;t, &amp;buf));
+    printf("local: %s", str);
+#endif
+}
+</pre>
+<p><span><img alt="" height="137" src="/images/c07.c.png" width="502"/></span></p>
+<p><span>08.用 C 語言寫一個程序，列印 24 個月之前的日期和時間。<br/></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#define _POSIX_C_SOURCE 200112L 
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+ 
+int main(void)
+{
+    setenv("TZ", "/usr/share/zoneinfo/Asia/Calcutta", 1);   // 設置時區為亞洲/加爾各答 (Indian Standard Time, IST)
+    struct tm tm = *localtime(&amp;(time_t){time(NULL)});       // 取得當前時間的 tm 結構體
+    printf("\n今天是：            %s", asctime(&amp;tm));        // 印出當前時間和當前是否為夏令時（DST）的狀態
+    printf("(夏令時 %s)\n", tm.tm_isdst ? "生效中" : "未生效");
+    tm.tm_mon -= 24;                                        // 修改 tm 結構體的 tm_mon 成員，將月份減去 24
+    mktime(&amp;tm);                                            // 使用 mktime 函式將修改後的 tm 結構體轉換為時間戳
+    printf("\n24個月前的日期是： %s", asctime(&amp;tm));        // 再次印出修改後的時間和當前是否為夏令時（DST）的狀態
+    printf("(夏令時 %s)\n\n", tm.tm_isdst ? "生效中" : "未生效");
+}
+</pre>
+<p><span><img alt="" height="168" src="/images/c08.c.png" width="560"/></span></p>
+<p><span>09.用C語言寫一個程式來顯示日曆時間的第一個時間。<br/></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+ 
+int main(void)
+{
+    struct tm first = {.tm_mday=1};   // 初始化 tm 結構體，將日期設為每月的第一天
+    mktime(&amp;first);                    // 使用 mktime 函數轉換 tm 結構體為時間戳
+    printf("\n%s\n", asctime(&amp;first)); // 印出轉換後的時間戳對應的日期和時間
+}
+</pre>
+<p><span><img alt="" height="97" src="/images/c09.c.png" width="307"/></span></p>
+<p><span>10.</span>用 C 寫一個程式來顯示紀元的開始。</p>
+<p>註：紀元是指某人歷史上某個時期的開始。<span><br/></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+ 
+int main(void)
+{
+    time_t epoch = 0;                            // 設定時間戳為 0，表示 Epoch 開始的時間
+    printf("\n%ld seconds since the epoch began\n", (long)epoch); // 印出距離 Epoch 開始的秒數
+    printf("%s\n", asctime(gmtime(&amp;epoch)));     // 使用 gmtime 將時間戳轉換為格林威治時間並印出
+}
+</pre>
+<p><img alt="" height="112" src="/images/c10.c.png" width="318"/></p>
+<p><span></span></p><h2>Exercises</h2>
 <p><a href="https://www.w3resource.com/c-programming-exercises">https://www.w3resource.com/c-programming-exercises</a>/<span>自選 10 個練習範例</span></p>
 <p>01.編寫一個 C 程序，將指定的日期轉換為年、週和日。<br/>註：忽略閏年。</p>
 <p>程式:</p>
